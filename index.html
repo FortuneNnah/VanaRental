@@ -270,7 +270,7 @@
             <li>✅ Earn weekly without giving away access</li>
         </ul>
         <div class="proof-box">
-            <p><strong>🔥 Latest Payout:</strong> $8.4 paid to Benjamin Ombeyo (+254115005045) on June 21</p>
+            <p><strong>🔥 Latest Payout:</strong> $8.4 paid to Benjamin Ombeyo (+254115005045) on <span class="date"></span></p>
             <p><strong>📨 Avg Response Time:</strong> 15–30 mins after message</p>
             <p><strong>💰 Total Paid:</strong> Over ₦2,000,000 this month</p>
         </div>
@@ -324,9 +324,20 @@
                 target="_blank">✅ Chat with Us on WhatsApp</a>
         </section>
 
-        <footer>
-            &copy; 2025 LinkedIn Partner Leads. All rights reserved. | Privacy protected.
-        </footer>
+        <footer class="footer"></footer>
+        <script>
+            function getYesterdayDate() {
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 2);
+                return yesterday.toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
 
+            document.querySelector('footer').innerHTML = `&copy; ${new Date().getFullYear()} LinkedIn Partner Leads. All rights reserved. | Privacy protected.`;
+            document.querySelector('.date').textContent = getYesterdayDate();
+        </script>
     </section>
 </body>
